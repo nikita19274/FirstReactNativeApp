@@ -3,10 +3,10 @@ import React from "react";
 import { icons } from "@/constants/icons";
 
 interface Props {
-  placeHolder: "string";
+  placeHolder: string;
   onPress?: () => void;
-  value: string;
-  onChangeText: (text: string) => void;
+  value?: string;
+  onChangeText?: (text: string) => void;
 }
 
 const SearchBar = ({ placeHolder, onPress, value, onChangeText }: Props) => {
