@@ -11,15 +11,15 @@ export const fetchMovies = async ({ query }: { query: string }) => {
   const endpoint = query
     ? `${TMBD_CONFIG.BASE_URL}/search/movie?query=${encodeURIComponent(query)}`
     : `${TMBD_CONFIG.BASE_URL}/discover/movie?sort_by=popularity.desc`;
-  const respone = await fetch(endpoint, {
+  const response = await fetch(endpoint, {
     method: "GET",
     headers: TMBD_CONFIG.headers,
   });
-  if (!respone.ok) {
+  if (!response.ok) {
     //@ts-ignore
     throw new Error("Failed to fethc movies", respone.statusText);
   }
-  const data = await respone.json();
+  const data = await response.json();
   return data.results;
 };
 

@@ -5,6 +5,7 @@ import {
   Image,
   TouchableOpacity,
   ActivityIndicator,
+  StatusBar,
 } from "react-native";
 import React from "react";
 import { router, useLocalSearchParams } from "expo-router";
@@ -33,12 +34,6 @@ const MovieDetails = () => {
     fetchMovieDetails(id as string)
   );
 
-  if (loading)
-    return (
-      <SafeAreaView className="bg-primary flex-1">
-        <ActivityIndicator />
-      </SafeAreaView>
-    );
   return (
     <View className="bg-primary flex-1">
       <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
