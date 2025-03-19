@@ -8,7 +8,7 @@ import {
   StatusBar,
 } from "react-native";
 import React from "react";
-import { router, useLocalSearchParams } from "expo-router";
+import { router, useLocalSearchParams, Stack } from "expo-router";
 import useFetch from "@/services/useFetch";
 import { fetchMovieDetails } from "@/services/api";
 import { icons } from "@/constants/icons";
@@ -36,6 +36,7 @@ const MovieDetails = () => {
 
   return (
     <View className="bg-primary flex-1">
+      <Stack.Screen options={{ headerShown: false }} />
       <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
         <View>
           <Image
